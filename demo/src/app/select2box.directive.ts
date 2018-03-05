@@ -17,16 +17,14 @@ export class Select2boxDirective {
       'data': this.datalist
     })
     this.$select.on('select2:select', e=> {
-      console.log('changes');
       var data = e.params.data;
-      this.ngModel.update.emit(data);
+      var eledata={id:"",text:""};
+      eledata.id=data.id;
+      eledata.text=data.text;
+      this.ngModel.update.emit(eledata);
     });
     this.ngModel.valueChanges.subscribe(value=> {
-      // this.$select.val(value.id+"");
-      // this.$select.trigger('change'); 
-      //this.$select.select2('val', value.id, true);
-      this.$select.val(value.id+"");
-      this.$select.trigger('change'); 
+      this.$select.val(value.id).trigger('change');
     });
   }
 }

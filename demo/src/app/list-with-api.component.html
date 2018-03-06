@@ -1,0 +1,19 @@
+<div class="status">
+    <virtual-scroll
+      [items]="buffer"
+      (update)="scrollItems = $event"
+      (end)="fetchMore($event)">
+        <ng-container  *ngFor="let item of scrollItems">
+            <div class="avatar">{{item.index}}</div>
+            <div class="item-content">
+                <div class="name">{{item.name}}</div>
+                <div>
+                    <span class="badge">{{item.age}}/{{item.gender?.substr(0, 1).toUpperCase()}}</span>
+                    <span>{{item.email}} | {{item.phone}}</span>
+                </div>
+                <div>{{item.address}}</div>
+            </div>
+        </ng-container>
+      <div *ngIf="loading" class="loader">Loading...</div>
+    </virtual-scroll>
+</div>

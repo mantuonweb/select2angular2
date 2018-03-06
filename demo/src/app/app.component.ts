@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-
+import { Http } from '@angular/http';
+import { ListItem } from './list-item.model';
+import 'rxjs/add/operator/map';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -39,5 +41,17 @@ export class AppComponent {
       id: "3",
       text: 'enhancement'
     };
+  }
+
+  items: ListItem[];
+
+
+
+  constructor(private http: Http) { }
+
+  ngOnInit() {
+    this.http.get('assets/data/items.json')
+      .map(response => response.json())
+      .subscribe(data => this.items = data);
   }
 }

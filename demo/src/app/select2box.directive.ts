@@ -14,7 +14,8 @@ export class Select2boxDirective {
   ngAfterViewInit() {
     this.$select=$(this._elementRef.nativeElement);
     this.$select.select2({
-      'data': this.datalist
+      'data': this.datalist,
+      'theme': "bootstrap"
     })
     this.$select.on('select2:select', e=> {
       var data = e.params.data;
@@ -25,6 +26,9 @@ export class Select2boxDirective {
     });
     this.ngModel.valueChanges.subscribe(value=> {
       this.$select.val(value.id).trigger('change');
+      //$("#select2-myInput-container").text(value.text);
+      //console.log($(this.$select.closest(".select2")));
+      $($(this.$select.siblings(".select2")).find("#select2-myInput-container")).text(value.text);
     });
   }
 }

@@ -36,7 +36,7 @@ export class AppComponent {
   changeValue() {
     console.log('changed');
     this.selectedValue =  {
-      id: "0",
+      id: "3",
       text: 'enhancement'
     };
   }

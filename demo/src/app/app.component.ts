@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { Http } from '@angular/http';
 import { ListItem } from './list-item.model';
+import { ViewEncapsulation } from '@angular/core';
 import 'rxjs/add/operator/map';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
   title = 'app';

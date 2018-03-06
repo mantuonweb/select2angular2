@@ -7,7 +7,8 @@ import { SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'list-with-api',
-  templateUrl: './list-with-api.component.html'
+  templateUrl: './list-with-api.component.html',
+  styleUrls: ['./list-with-api.component.css']
 })
 export class ListWithApiComponent implements OnChanges {
   @Input()

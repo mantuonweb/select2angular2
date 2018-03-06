@@ -5,3 +5,10 @@
     overflow-y: auto;
     border:1px solid gray;
 }
+virtual-scroll{
+    overflow: hidden;
+    overflow-y: auto;
+    border: 1px solid red;
+    height: 75vh;
+    display: block;
+  }

@@ -1,17 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
+  <!-- <h1>
     Welcome to {{ title }}!
-  </h1>
+  </h1> -->
+  
   <input id="myInput" type="text" select2box [datalist]="data" [(ngModel)]="selectedValue">
   <button type="button" (click)="changeValue()">Change</button>
   <br>
   {{selectedValue?.id}}
   {{selectedValue?.text}}
 </div>
-<!-- <div id="list">
-  <longlist></longlist>
-</div> -->
 <list-with-api [items]="items"></list-with-api>
 
 
